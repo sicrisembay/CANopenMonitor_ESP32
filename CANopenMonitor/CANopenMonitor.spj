@@ -557,7 +557,7 @@
           {
             "disabled": false,
             "nid": 1334485812,
-            "strtype": "SCREEN/EventHandler",
+            "strtype": "_event/EventHandler",
             "strval": "SCREEN_LOADED",
             "childs": [
               {
@@ -580,7 +580,7 @@
               },
               {
                 "nid": 65783412,
-                "strtype": "_custom/action",
+                "strtype": "_event/action",
                 "strval": "CHANGE SCREEN",
                 "childs": [
                   {
@@ -610,7 +610,7 @@
                   {
                     "nid": 1977440074,
                     "strtype": "CHANGE SCREEN/Fade_mode",
-                    "strval": "MOVE_LEFT",
+                    "strval": "FADE_ON",
                     "InheritedType": 3
                   },
                   {
@@ -630,7 +630,7 @@
               },
               {
                 "nid": -910240757,
-                "strtype": "_custom/action",
+                "strtype": "_event/action",
                 "strval": "PLAY ANIMATION",
                 "childs": [
                   {
@@ -654,7 +654,7 @@
                   {
                     "nid": 157428629,
                     "strtype": "PLAY ANIMATION/Target",
-                    "strval": "GUID2446165-710799S5423101",
+                    "strval": "GUID11787700-711602S2073101",
                     "InheritedType": 9
                   },
                   {
@@ -1616,7 +1616,7 @@
               {
                 "nid": 1557511548,
                 "strtype": "OBJECT/Name",
-                "strval": "Button1",
+                "strval": "Connect",
                 "InheritedType": 10
               },
               {
@@ -1893,6 +1893,71 @@
                 "strtype": "BUTTON/Style_main",
                 "strval": "lv.PART.MAIN, Rectangle, Pad, Text ",
                 "InheritedType": 11
+              },
+              {
+                "disabled": false,
+                "nid": 160040179,
+                "strtype": "BUTTON/EventHandler",
+                "strval": "CLICKED",
+                "childs": [
+                  {
+                    "nid": -407661378,
+                    "strtype": "_custom/name",
+                    "strval": "Event2",
+                    "InheritedType": 10
+                  },
+                  {
+                    "nid": -745237347,
+                    "strtype": "_custom/condition_C",
+                    "strval": "",
+                    "InheritedType": 10
+                  },
+                  {
+                    "nid": -621434993,
+                    "strtype": "_custom/condition_P",
+                    "strval": "",
+                    "InheritedType": 10
+                  },
+                  {
+                    "nid": 483866027,
+                    "strtype": "_custom/action",
+                    "strval": "CALL FUNCTION",
+                    "childs": [
+                      {
+                        "nid": -2089096183,
+                        "strtype": "CALL FUNCTION/Name",
+                        "strval": "CALL FUNCTION",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": -1411073725,
+                        "strtype": "CALL FUNCTION/Call",
+                        "strval": "<{Function_name}>( event_struct )",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 1399057757,
+                        "strtype": "CALL FUNCTION/CallC",
+                        "strval": "<{Function_name}>( e );",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 810032844,
+                        "strtype": "CALL FUNCTION/Function_name",
+                        "strval": "CANopenConnect",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 2133664482,
+                        "strtype": "CALL FUNCTION/Dont_export_function",
+                        "strval": "False",
+                        "InheritedType": 2
+                      }
+                    ],
+                    "InheritedType": 10
+                  }
+                ],
+                "InheritedType": 4
               }
             ],
             "saved_objtypeKey": "BUTTON"
@@ -3058,7 +3123,6 @@
               },
               {
                 "nid": -1471332149,
-                "flags": 1048576,
                 "strtype": "DROPDOWN/Label",
                 "InheritedType": 1
               },
@@ -3157,28 +3221,7 @@
               },
               {
                 "part": " lv.PART.SCROLLBAR",
-                "childs": [
-                  {
-                    "nid": 62256562,
-                    "strtype": "_style/StyleState",
-                    "strval": "DEFAULT",
-                    "childs": [
-                      {
-                        "nid": 2034841185,
-                        "strtype": "_style/Bg_Color",
-                        "strval": "ColorTwo",
-                        "intarray": [
-                          244,
-                          67,
-                          54,
-                          255
-                        ],
-                        "InheritedType": 7
-                      }
-                    ],
-                    "InheritedType": 1
-                  }
-                ],
+                "childs": [],
                 "nid": 469359411,
                 "strtype": "DROPDOWN/Style_list_scrollbar",
                 "strval": "{\"python\":\"{0}.get_list()\",\"c\":\"lv_dropdown_get_list({0})\"} lv.PART.SCROLLBAR, Rectangle, Pad",
@@ -3186,28 +3229,7 @@
               },
               {
                 "part": " lv.PART.SELECTED",
-                "childs": [
-                  {
-                    "nid": -1408287865,
-                    "strtype": "_style/StyleState",
-                    "strval": "DEFAULT",
-                    "childs": [
-                      {
-                        "nid": 1685731986,
-                        "strtype": "_style/Bg_Color",
-                        "strval": "ColorTwo",
-                        "intarray": [
-                          244,
-                          67,
-                          54,
-                          255
-                        ],
-                        "InheritedType": 7
-                      }
-                    ],
-                    "InheritedType": 1
-                  }
-                ],
+                "childs": [],
                 "nid": 1515038960,
                 "strtype": "DROPDOWN/Style_list_selected",
                 "strval": "{\"python\":\"{0}.get_list()\",\"c\":\"lv_dropdown_get_list({0})\"} lv.PART.SELECTED, Text, Rectangle",
@@ -3693,7 +3715,7 @@
     "theme_color2": 0,
     "uiExportFolderPath": "D:\\01_work\\03_workspace\\01_git\\CANopenMonitor_ESP32\\CANopenMonitor\\main\\ui",
     "projectExportFolderPath": "",
-    "backup_cnt": 26,
+    "backup_cnt": 33,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

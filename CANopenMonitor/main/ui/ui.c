@@ -22,7 +22,8 @@ void ui_Configure_screen_init(void);
 lv_obj_t * ui_Configure;
 lv_obj_t * ui_Configure_Container_Header;
 lv_obj_t * ui_Configure_Label_Label2;
-lv_obj_t * ui_Configure_Button_Button1;
+void ui_event_Configure_Button_Connect(lv_event_t * e);
+lv_obj_t * ui_Configure_Button_Connect;
 lv_obj_t * ui_Configure_Label_Label3;
 lv_obj_t * ui_Configure_Label_Label4;
 lv_obj_t * ui_Configure_Roller_Roller1;
@@ -68,8 +69,16 @@ void ui_event_Splash(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_SCREEN_LOADED) {
-        _ui_screen_change(&ui_Configure, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 5000, &ui_Configure_screen_init);
+        _ui_screen_change(&ui_Configure, LV_SCR_LOAD_ANIM_FADE_ON, 500, 5000, &ui_Configure_screen_init);
         Splash_Animation(ui_Splash_Label_splash, 0);
+    }
+}
+void ui_event_Configure_Button_Connect(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        CANopenConnect(e);
     }
 }
 
