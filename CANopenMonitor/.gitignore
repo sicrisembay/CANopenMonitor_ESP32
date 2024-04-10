@@ -1,4 +1,6 @@
 build
 managed_components
+autosave
+backup
 sdkconfig.old
 dependencies.lock
