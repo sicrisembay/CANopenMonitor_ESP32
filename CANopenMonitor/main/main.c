@@ -12,6 +12,7 @@
 #include "esp_lcd_touch_gt911.h"
 #include "lvgl.h"
 #include "ui.h"
+#include "CO_app.h"
 
 static const char *TAG = "main";
 /* LCD Interface (i80) */
@@ -240,6 +241,15 @@ static void init_lcd_touch(esp_lcd_touch_handle_t *tp_handle)
         .scl_pullup_en = GPIO_PULLUP_ENABLE,
         .master.clk_speed = 400000,
     };
+    /* Hard reset GT911 */
+    gpio_config_t io_config = {
+        .mode = GPIO_MODE_OUTPUT,
+        .pin_bit_mask = 1ULL << TP_PIN_NUM_RST};
+    ESP_ERROR_CHECK(gpio_config(&io_config));
+    gpio_set_level(TP_PIN_NUM_RST, 0);
+    vTaskDelay(20);
+    gpio_set_level(TP_PIN_NUM_RST, 1);
+
     /* Initialize I2C */
     ESP_ERROR_CHECK(i2c_param_config(TP_I2C_NUM, &i2c_conf));
     ESP_ERROR_CHECK(i2c_driver_install(TP_I2C_NUM, i2c_conf.mode, 0, 0, 0));
@@ -340,4 +350,6 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_lcd_panel_disp_on_off(lcd_handle, true));
     ESP_LOGI(TAG, "Turn on LCD backlight");
     gpio_set_level(LCD_PIN_NUM_BK_LIGHT, LCD_BK_LIGHT_ON_LEVEL);
+
+    canopen_app_init();
 }

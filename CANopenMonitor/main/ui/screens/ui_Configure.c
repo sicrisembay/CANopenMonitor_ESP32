@@ -67,7 +67,8 @@ void ui_Configure_screen_init(void)
     lv_obj_set_style_text_font(ui_Configure_Label_Label4, &lv_font_montserrat_18, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Configure_Roller_Roller1 = lv_roller_create(ui_Configure);
-    lv_roller_set_options(ui_Configure_Roller_Roller1, "1Mbps\n800kbps\n500kbps\n250kbps\n125kbps", LV_ROLLER_MODE_NORMAL);
+    lv_roller_set_options(ui_Configure_Roller_Roller1, "1Mbps\n800kbps\n500kbps\n250kbps\n125kbps\n100kbps\n50kbps\n25kbps",
+                          LV_ROLLER_MODE_NORMAL);
     lv_obj_set_width(ui_Configure_Roller_Roller1, 120);
     lv_obj_set_height(ui_Configure_Roller_Roller1, 100);
     lv_obj_set_x(ui_Configure_Roller_Roller1, 47);

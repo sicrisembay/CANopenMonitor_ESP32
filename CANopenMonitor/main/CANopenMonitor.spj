@@ -1897,7 +1897,7 @@
               {
                 "disabled": false,
                 "nid": 160040179,
-                "strtype": "BUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -1920,7 +1920,7 @@
                   },
                   {
                     "nid": 483866027,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -2480,14 +2480,13 @@
               },
               {
                 "nid": -765228318,
-                "flags": 1048576,
                 "strtype": "ROLLER/Roller",
                 "InheritedType": 1
               },
               {
                 "nid": 1931530828,
                 "strtype": "ROLLER/Options",
-                "strval": "1Mbps\\n800kbps\\n500kbps\\n250kbps\\n125kbps",
+                "strval": "1Mbps\\n800kbps\\n500kbps\\n250kbps\\n125kbps\\n100kbps\\n50kbps\\n25kbps",
                 "InheritedType": 10
               },
               {
@@ -3714,8 +3713,8 @@
     "theme_color1": 5,
     "theme_color2": 0,
     "uiExportFolderPath": "D:\\01_work\\03_workspace\\01_git\\CANopenMonitor_ESP32\\CANopenMonitor\\main\\ui",
-    "projectExportFolderPath": "",
-    "backup_cnt": 33,
+    "projectExportFolderPath": "D:\\01_work\\03_workspace\\01_git\\CANopenMonitor_ESP32\\CANopenMonitor\\main",
+    "backup_cnt": 48,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",
